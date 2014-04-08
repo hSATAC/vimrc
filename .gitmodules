@@ -110,10 +110,6 @@
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
 	ignore = untracked
-[submodule "bundle/thumbnail.vim"]
-	path = bundle/thumbnail.vim
-	url = https://github.com/itchyny/thumbnail.vim.git
-	ignore = untracked
 [submodule "bundle/vim-ruby-refactoring"]
 	path = bundle/vim-ruby-refactoring
 	url = https://github.com/ecomba/vim-ruby-refactoring.git
