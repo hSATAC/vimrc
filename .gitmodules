@@ -153,3 +153,6 @@
 [submodule "bundle/vim-gocode-blackrush"]
 	path = bundle/vim-gocode-blackrush
 	url = git@github.com:Blackrush/vim-gocode.git
+[submodule ".vim/bundle/puppet"]
+	path = .vim/bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git

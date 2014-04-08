@@ -339,8 +339,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     "endif
 
     " --- supertab
-    "let g:SuperTabDefaultCompletionType = "context"
-    let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+    let g:SuperTabDefaultCompletionType = "context"
+    "let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
     " --- ctrlp
     map <leader>f :CtrlPMixed<CR>
