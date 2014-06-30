@@ -123,6 +123,8 @@ autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,
 
 " Ruby
 autocmd FileType ruby,eruby,yaml set softtabstop=2 shiftwidth=2 tabstop=2
+autocmd BufNewFile,BufRead *.eyaml set filetype=yaml
+autocmd BufNewFile,BufRead *.cap set filetype=ruby
 
 " Go
 au FileType go au BufWritePre <buffer> Fmt
