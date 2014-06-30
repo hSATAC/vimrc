@@ -9,9 +9,9 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 " ENCODING SETTINGS
-"--------------------------------------------------------------------------- 
+"---------------------------------------------------------------------------
 
 set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
@@ -21,11 +21,11 @@ source $VIMRUNTIME/menu.vim
 
 " General Settings
 
-set nocompatible	" not compatible with the old-fashion vi mode
-set bs=2		    " allow backspacing over everything in insert mode
-set history=50		" keep 50 lines of command line history
-set ruler	    	" show the cursor position all the time
-set autoread		" auto read when file is changed from outside
+set nocompatible    " not compatible with the old-fashion vi mode
+set bs=2            " allow backspacing over everything in insert mode
+set history=50      " keep 50 lines of command line history
+set ruler           " show the cursor position all the time
+set autoread        " auto read when file is changed from outside
 set nu              " display line number
 set ts=4            " tabstop 4
 set wak=no          " disable GUI alt menu
@@ -41,10 +41,10 @@ filetype plugin on    " Enable filetype-specific plugins
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 
-syntax on		" syntax highlight
-set hlsearch		" search highlighting
+syntax on       " syntax highlight
+set hlsearch        " search highlighting
 
-if has("gui_running")	" GUI color and font settings
+if has("gui_running")   " GUI color and font settings
     if has("gui_gtk2")
         set guifont=Bitstream\ Vera\ Sans\ Mono\ 13
     else
@@ -53,29 +53,29 @@ if has("gui_running")	" GUI color and font settings
     set t_Co=256          " 256 color mode
     set cursorline        " highlight current line
     colors railscasts
-    set background=dark 
+    set background=dark
 else
     " terminal color settings
     colors wombat256
     set background=light
 endif
 
-set clipboard=unnamed	" yank to the system register (*) by default
-set showmatch		" Cursor shows matching ) and }
-set showmode		" Show current mode
-set wildchar=<TAB>	" start wild expansion in the command line using <TAB>
+set clipboard=unnamed   " yank to the system register (*) by default
+set showmatch       " Cursor shows matching ) and }
+set showmode        " Show current mode
+set wildchar=<TAB>  " start wild expansion in the command line using <TAB>
 set wildmenu            " wild char completion menu
 
 " ignore these files while expanding wild chars
 set wildignore=*.o,*.class,*.pyc
 
-set autoindent		" auto indentation
-set incsearch		" incremental search
-set nobackup		" no *~ backup files
-set copyindent		" copy the previous indentation on autoindenting
-set ignorecase		" ignore case when searching
-set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
-set smarttab		" insert tabs on the start of a line according to context
+set autoindent      " auto indentation
+set incsearch       " incremental search
+set nobackup        " no *~ backup files
+set copyindent      " copy the previous indentation on autoindenting
+set ignorecase      " ignore case when searching
+set smartcase       " ignore case if search pattern is all lowercase,case-sensitive otherwise
+set smarttab        " insert tabs on the start of a line according to context
 
 " disable sound on errors
 set noerrorbells
@@ -89,13 +89,13 @@ set softtabstop=4
 set shiftwidth=4
 
 au FileType Makefile set noexpandtab
-"}      							
+"}
 
 " status line {
 set laststatus=2
-set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
-set statusline+=\ \ \ [%{&ff}/%Y] 
-set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\ 
+set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \
+set statusline+=\ \ \ [%{&ff}/%Y]
+set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\
 set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 
 function! CurDir()
@@ -143,14 +143,14 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 
     command! -bang Q quit<bang>
 
-    "--------------------------------------------------------------------------- 
-    " Tip #382: Search for <cword> and replace with input() in all open buffers 
-    "--------------------------------------------------------------------------- 
-    fun! Replace() 
-        let s:word = input("Replace " . expand('<cword>') . " with:") 
-        :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge' 
-        :unlet! s:word 
-    endfun 
+    "---------------------------------------------------------------------------
+    " Tip #382: Search for <cword> and replace with input() in all open buffers
+    "---------------------------------------------------------------------------
+    fun! Replace()
+        let s:word = input("Replace " . expand('<cword>') . " with:")
+        :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge'
+        :unlet! s:word
+    endfun
 
     " Highlight trailing whitespaces
     highlight ExtraWhitespace ctermbg=red guibg=red
@@ -161,9 +161,9 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     autocmd BufWinLeave * call clearmatches()
 
 
-    "--------------------------------------------------------------------------- 
+    "---------------------------------------------------------------------------
     " USEFUL SHORTCUTS
-    "--------------------------------------------------------------------------- 
+    "---------------------------------------------------------------------------
     " set leader to ,
     let mapleader=","
     let g:mapleader=","
@@ -172,21 +172,21 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     "map <leader>r :call Replace()<CR>
 
     " --- move around splits {
-    " move to and maximize the below split 
+    " move to and maximize the below split
     map <C-J> <C-W>j<C-W>_
-    " move to and maximize the above split 
+    " move to and maximize the above split
     map <C-K> <C-W>k<C-W>_
-    " move to and maximize the left split 
+    " move to and maximize the left split
     nmap <c-h> <c-w>h<c-w><bar>
-    " move to and maximize the right split  
+    " move to and maximize the right split
     nmap <c-l> <c-w>l<c-w><bar>
-    set wmw=0                     " set the min width of a window to 0 so we can maximize others 
+    set wmw=0                     " set the min width of a window to 0 so we can maximize others
     set wmh=0                     " set the min height of a window to 0 so we can maximize others
     " }
 
     " move around tabs. conflict with the original screen top/bottom
     " comment them out if you want the original H/L
-    " go to prev tab 
+    " go to prev tab
     map <S-H> gT
     " go to next tab
     map <S-L> gt
@@ -195,10 +195,10 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     " new tab
     map <C-t><C-t> :tabnew<CR>
     " close tab
-    map <C-t><C-w> :tabclose<CR> 
+    map <C-t><C-w> :tabclose<CR>
 
     if(has("gui_running") && !has("mac")) " gvim win 32 and gvim linux
-        map ÷ :tabclose<CR> 
+        map ÷ :tabclose<CR>
     endif
     if(has("gui_macvim") && !has("gui_running")) " macvim console
         map w :tabclose<CR>
@@ -253,10 +253,10 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
         endif
     endfunction
     map <leader>n :call RenameFile()<cr>
- 
-    "--------------------------------------------------------------------------- 
+
+    "---------------------------------------------------------------------------
     " PROGRAMMING SHORTCUTS
-    "--------------------------------------------------------------------------- 
+    "---------------------------------------------------------------------------
 
     " switch between file
     nnoremap <leader><leader> <c-^>
@@ -289,9 +289,9 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     " use syntax complete if nothing else available
     if has("autocmd") && exists("+omnifunc")
         autocmd Filetype *
-                    \	if &omnifunc == "" |
-                    \		setlocal omnifunc=syntaxcomplete#Complete |
-                    \	endif
+                    \   if &omnifunc == "" |
+                    \       setlocal omnifunc=syntaxcomplete#Complete |
+                    \   endif
     endif
 
 
@@ -299,233 +299,248 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     autocmd BufNewFile,BufRead *.scss             set ft=scss.css
     autocmd BufNewFile,BufRead *.sass             set ft=sass.css
 
-    "--------------------------------------------------------------------------- 
-    " PLUGIN SETTINGS
-    "--------------------------------------------------------------------------- 
+    " Don't override register when pasting
+function! RestoreRegister()
+    let @" = s:restore_reg
+    if &clipboard == "unnamed"
+        let @* = s:restore_reg
+    endif
+    return ''
+endfunction
 
-    " --- AutoClose - Inserts matching bracket, paren, brace or quote 
-    " fixed the arrow key problems caused by AutoClose
-    "IF !HAS("GUI_RUNNING")	
-    "set term=linux
-    "set t_k1=[11~
-    "set t_k2=[11~
-    "set t_k3=[11~
-    "set t_k4=[11~
-    ""imap oa <esc>ki
-    ""imap ob <esc>ji
-    ""imap oc <esc>li
-    ""imap od <esc>hi
+function! s:Repl()
+    let s:restore_reg = @"
+    return "p@=RestoreRegister()\<cr>"
+endfunction
 
-    "nmap oa k
-    "nmap ob j
-    "nmap oc l
-    "nmap od h
+" NB: this supports "rp that replaces the selection by the contents of @r
+vnoremap <silent> <expr> p <sid>Repl()
 
-    "set <home>=[h
-    "set <end>=[f
+"---------------------------------------------------------------------------
+" PLUGIN SETTINGS
+"---------------------------------------------------------------------------
 
-    "if $term =~ 'xterm'
-    "set <f1>=op
-    "set <f2>=oq
-    "set <f3>=or
-    "set <f4>=os
-    "set <home>=oh
-    "set <end>=of
-    "endif
-    "if $term =~ 'screen'
-    "set <f1>=op
-    "set <f2>=oq
-    "set <f3>=or
-    "set <f4>=os
-    "endif
-    "endif
+" --- AutoClose - Inserts matching bracket, paren, brace or quote
+" fixed the arrow key problems caused by AutoClose
+"IF !HAS("GUI_RUNNING")
+"set term=linux
+"set t_k1=[11~
+"set t_k2=[11~
+"set t_k3=[11~
+"set t_k4=[11~
+""imap oa <esc>ki
+""imap ob <esc>ji
+""imap oc <esc>li
+""imap od <esc>hi
 
-    " --- supertab
-    let g:SuperTabDefaultCompletionType = "context"
-    "let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+"nmap oa k
+"nmap ob j
+"nmap oc l
+"nmap od h
 
-    " --- ctrlp
-    map <leader>f :CtrlPMixed<CR>
+"set <home>=[h
+"set <end>=[f
 
-    let g:ctrlp_regexp = 1
-    let g:ctrlp_match_window_reversed = 0
-    let g:ctrlp_prompt_mappings = { 'PrtAdd(".*")': ['<space>'] }
-    "let g:ctrlp_user_command = {
-    "\ 'types': {
-    "\ 1: ['.git', 'cd %s && git ls-files -c -o'],
-    "\ 2: ['.hg', 'hg --cwd %s locate -I .'],
-    "\ },
-    "\ 'fallback': 'find %s -type f'
-    "\ }
+"if $term =~ 'xterm'
+"set <f1>=op
+"set <f2>=oq
+"set <f3>=or
+"set <f4>=os
+"set <home>=oh
+"set <end>=of
+"endif
+"if $term =~ 'screen'
+"set <f1>=op
+"set <f2>=oq
+"set <f3>=or
+"set <f4>=os
+"endif
+"endif
 
-    " --- taglist
-    nmap <silent><F8> :TlistToggle<CR>
-    imap <silent><F8> <C-o>:TlistToggle<CR>
-    let Tlist_Use_SingleClick = 1
-    let Tlist_Use_Right_Window = 1
-    let Tlist_Show_One_File = 1
-    let tlist_php_settings = 'php;c:class;d:constant;f:function'
-    " --- tagbar
-    nnoremap <silent><F7> :TagbarToggle<CR>
-    let g:tagbar_autofocus = 1
-    
-    let g:tagbar_type_go = {
-        \ 'ctagstype' : 'go',
-        \ 'kinds'     : [
-            \ 'p:package',
-            \ 'i:imports:1',
-            \ 'c:constants',
-            \ 'v:variables',
-            \ 't:types',
-            \ 'n:interfaces',
-            \ 'w:fields',
-            \ 'e:embedded',
-            \ 'm:methods',
-            \ 'r:constructor',
-            \ 'f:functions'
-        \ ],
-        \ 'sro' : '.',
-        \ 'kind2scope' : {
-            \ 't' : 'ctype',
-            \ 'n' : 'ntype'
-        \ },
-        \ 'scope2kind' : {
-            \ 'ctype' : 't',
-            \ 'ntype' : 'n'
-        \ },
-        \ 'ctagsbin'  : 'gotags',
-        \ 'ctagsargs' : '-sort -silent'
-    \ }
+" --- supertab
+let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
-    " --- nerdtree
-    nnoremap <silent><F5> :NERDTreeMirrorToggle<CR>
+" --- ctrlp
+map <leader>f :CtrlPMixed<CR>
 
-    " --- gitgutter
-    highlight clear SignColumn
+let g:ctrlp_regexp = 1
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_prompt_mappings = { 'PrtAdd(".*")': ['<space>'] }
+"let g:ctrlp_user_command = {
+"\ 'types': {
+"\ 1: ['.git', 'cd %s && git ls-files -c -o'],
+"\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+"\ },
+"\ 'fallback': 'find %s -type f'
+"\ }
 
-    " --- copy to osx clipboard
-    map <F6> :w !pbcopy<CR><CR>
+" --- taglist
+nmap <silent><F8> :TlistToggle<CR>
+imap <silent><F8> <C-o>:TlistToggle<CR>
+let Tlist_Use_SingleClick = 1
+let Tlist_Use_Right_Window = 1
+let Tlist_Show_One_File = 1
+let tlist_php_settings = 'php;c:class;d:constant;f:function'
+" --- tagbar
+nnoremap <silent><F7> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
 
-    " --- Switch.vim
-    nnoremap - :Switch<cr>
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
 
-    " --- SingleCompile
-    nmap <F9> :SCCompile<cr> 
-    nmap <F10> :SCCompileRun<cr>
+" --- nerdtree
+nnoremap <silent><F5> :NERDTreeMirrorToggle<CR>
 
-    " --- VimRails
+" --- gitgutter
+highlight clear SignColumn
 
-    let g:rails_projections = {
-          \ "app/presenters/*.rb": { "command": "presenters" },
-          \ "app/observers/*.rb": { "command": "observers" },
-          \ "app/services/*.rb": { "command": "services" },
-          \ "app/extras/form_object/*.rb": {"command": "forms"},
-          \ "app/forms/*.rb": {"command": "forms"},
-          \ "app/extras/service/*.rb": {"command": ["services", "forms", "models"]},
-          \ "app/extras/view_object/*.rb": {"command": "views"},
-          \ "app/models/fields/*.rb": {"command": "fields"},
-          \ "app/models/fields_data/*.rb": {"command": "fields"},
-          \ "app/models/concerns/*.rb": {"command": ["models", "cerns"]},
-          \ "app/models/reports/*.rb": {"command": "reports"},
-          \ "spec/factories/*.rb": {"command": "factories"},
-          \ "spec/factories/fields/*.rb": {"command": "factories"},
-          \ "spec/features/*.rb": {"command": "features"},
-          \ "spec/support/*.rb": {"command": "supports"},
-          \ "lib/tasks/*.rake": {"alternate": ["spec/lib/tasks/%s.rake_spec.rb"]},
-          \ "app/assets/javascripts/*.js.coffee": {"alternate": ["spec/javascripts/%s_spec.js.coffee"]},
-          \ "spec/javascripts/*_spec.js.coffee": {"alternate": ["app/assets/javascripts/%s.js.coffee"]}
-          \ }
+" --- copy to osx clipboard
+map <F6> :w !pbcopy<CR><CR>
 
-    " Open/Create related spec/file
-    function! s:CreateRelated()
-      let related = s:GetRelatedFile(expand('%'))
-      call s:Open(related)
-    endfunction
+" --- Switch.vim
+nnoremap - :Switch<cr>
 
-    " Return the related filename
-    function! s:GetRelatedFile(file)
-        if match(a:file, '_spec\.rb$') != -1
-            return substitute(substitute(a:file, "_spec.rb$", ".rb", ""), '^spec/', 'app/', '')
-        else
-            return substitute(substitute(a:file, ".rb$", "_spec.rb", ""), '^app/', 'spec/', '')
-        endif
-    endfunction
+" --- SingleCompile
+nmap <F9> :SCCompile<cr>
+nmap <F10> :SCCompileRun<cr>
 
-    " Open the related file in a vsplit
-    function! s:Open(file)
-        exec('split ' . a:file)
-    endfunction
+" --- VimRails
 
-    " Register a new command `AC` for open/create a
-    " related file
-    command! AC :call <SID>CreateRelated()
+let g:rails_projections = {
+      \ "app/presenters/*.rb": { "command": "presenters" },
+      \ "app/observers/*.rb": { "command": "observers" },
+      \ "app/services/*.rb": { "command": "services" },
+      \ "app/extras/form_object/*.rb": {"command": "forms"},
+      \ "app/forms/*.rb": {"command": "forms"},
+      \ "app/extras/service/*.rb": {"command": ["services", "forms", "models"]},
+      \ "app/extras/view_object/*.rb": {"command": "views"},
+      \ "app/models/fields/*.rb": {"command": "fields"},
+      \ "app/models/fields_data/*.rb": {"command": "fields"},
+      \ "app/models/concerns/*.rb": {"command": ["models", "cerns"]},
+      \ "app/models/reports/*.rb": {"command": "reports"},
+      \ "spec/factories/*.rb": {"command": "factories"},
+      \ "spec/factories/fields/*.rb": {"command": "factories"},
+      \ "spec/features/*.rb": {"command": "features"},
+      \ "spec/support/*.rb": {"command": "supports"},
+      \ "lib/tasks/*.rake": {"alternate": ["spec/lib/tasks/%s.rake_spec.rb"]},
+      \ "app/assets/javascripts/*.js.coffee": {"alternate": ["spec/javascripts/%s_spec.js.coffee"]},
+      \ "spec/javascripts/*_spec.js.coffee": {"alternate": ["app/assets/javascripts/%s.js.coffee"]}
+      \ }
 
-    " --- dash.vim
-     
-    function! SearchDash()
-        let s:browser = "/usr/bin/open"
-        let s:wordUnderCursor = expand("<cword>")
-        let s:url = "dash://".s:wordUnderCursor
-        let s:cmd ="silent ! " . s:browser . " " . s:url
-        execute s:cmd
-        redraw!
-    endfunction
-    map <leader>h :call SearchDash()<CR>
+" Open/Create related spec/file
+function! s:CreateRelated()
+  let related = s:GetRelatedFile(expand('%'))
+  call s:Open(related)
+endfunction
 
-    " --- vim-turbux
-    let g:no_turbux_mappings = 1
-    au Filetype ruby
-        \ map <leader>t <Plug>SendTestToTmux |
-        \ map <leader>r <Plug>SendFocusedTestToTmux |
-        \ let g:turbux_command_rspec  = 'zeus rspec'        " default: rspec
+" Return the related filename
+function! s:GetRelatedFile(file)
+    if match(a:file, '_spec\.rb$') != -1
+        return substitute(substitute(a:file, "_spec.rb$", ".rb", ""), '^spec/', 'app/', '')
+    else
+        return substitute(substitute(a:file, ".rb$", "_spec.rb", ""), '^app/', 'spec/', '')
+    endif
+endfunction
 
-    au FileType go map <leader>t :Tmux go test<CR>
+" Open the related file in a vsplit
+function! s:Open(file)
+    exec('split ' . a:file)
+endfunction
 
-    " --- vim-multiple-cursors
-    let g:multi_cursor_exit_from_insert_mode = 0
+" Register a new command `AC` for open/create a
+" related file
+command! AC :call <SID>CreateRelated()
 
-    " --- align.vim
+" --- dash.vim
 
-        " For Ruby hash
-        command! -range AlignHash execute "<line1>,<line2>Align! P01 : =>"
+function! SearchDash()
+    let s:browser = "/usr/bin/open"
+    let s:wordUnderCursor = expand("<cword>")
+    let s:url = "dash://".s:wordUnderCursor
+    let s:cmd ="silent ! " . s:browser . " " . s:url
+    execute s:cmd
+    redraw!
+endfunction
+map <leader>h :call SearchDash()<CR>
 
-    " --- vim-indent-guide
-    let g:indent_guides_start_level = 2
-    "let g:indent_guides_enable_on_vim_startup = 1
-    let g:indent_guides_guide_size = 1
-    let g:indent_guides_color_change_percent = 5
-    let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=235
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+" --- vim-turbux
+let g:no_turbux_mappings = 1
+au Filetype ruby
+    \ map <leader>t <Plug>SendTestToTmux |
+    \ map <leader>r <Plug>SendFocusedTestToTmux |
+    \ let g:turbux_command_rspec  = 'zeus rspec'        " default: rspec
 
-    " --- vim-airline
-    set ttimeoutlen=50
-    let g:airline_left_sep = ''
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_linecolumn_prefix = ''
-    let g:airline_linecolumn_prefix = ''
-    let g:airline_linecolumn_prefix = ''
-    let g:airline#extensions#whitespace#enabled = 0
-    let g:airline#extensions#branch#enabled = 1
-    let g:airline#extensions#syntastic#enabled = 0
-    let g:airline#extensions#tagbar#enabled = 1
-    let g:airline#extensions#csv#enabled = 0
-    let g:airline#extensions#hunks#enabled = 0
-    let g:airline#extensions#virtualenv#enabled = 1
+au FileType go map <leader>t :Tmux go test<CR>
 
-    let g:airline_theme_patch_func = 'AirlineThemePatch'
-    function! AirlineThemePatch(palette)
-        if g:airline_theme == 'wombat'
-            for colors in values(a:palette.inactive)
-                let colors[3] = 235
-            endfor
-        endif
-    endfunction
+" --- vim-multiple-cursors
+let g:multi_cursor_exit_from_insert_mode = 0
 
-    " --- easymotion
-    hi EasyMotionTarget ctermbg=none ctermfg=green
-    hi EasyMotionShade  ctermbg=none ctermfg=blue
+" --- align.vim
 
+    " For Ruby hash
+    command! -range AlignHash execute "<line1>,<line2>Align! P01 : =>"
 
+" --- vim-indent-guide
+let g:indent_guides_start_level = 2
+"let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_color_change_percent = 5
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=235
+
+" --- vim-airline
+set ttimeoutlen=50
+let g:airline_left_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_sep = ''
+let g:airline_linecolumn_prefix = ''
+let g:airline_linecolumn_prefix = ''
+let g:airline_linecolumn_prefix = ''
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#csv#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#virtualenv#enabled = 1
+
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+    if g:airline_theme == 'wombat'
+        for colors in values(a:palette.inactive)
+            let colors[3] = 235
+        endfor
+    endif
+endfunction
+
+" --- easymotion
+hi EasyMotionTarget ctermbg=none ctermfg=green
+hi EasyMotionShade  ctermbg=none ctermfg=blue
