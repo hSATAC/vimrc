@@ -98,7 +98,7 @@ PLUGINS
 
 * [multiple-cursors](https://github.com/terryma/vim-multiple-cursors): `Ctrl + n` to multiple select, `v` to enter visual mode, `i` to enter insert mode.
 
-* [fugtive](https://github.com/terryma/vim-multiple-cursors): `:Gblame` to view git blame.
+* [fugitive](https://github.com/tpope/vim-fugitive): `:Gblame` to view git blame.
 
 * [startify](https://github.com/mhinz/vim-startify): Start page replacement, shows recent files.
 
