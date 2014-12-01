@@ -36,6 +36,8 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+retab " this will cause all existing tabs to be expanded
+
 
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
@@ -425,7 +427,16 @@ let g:tagbar_type_go = {
 \ }
 
 " --- nerdtree
+let NERDTreeShowHidden=1
 nnoremap <silent><F5> :NERDTreeMirrorToggle<CR>
+
+" --- Buffergator
+let g:buffergator_viewport_split_policy = "b"
+let g:buffergator_suppress_keymaps="1"
+let g:buffergator_autodismiss_on_select=0
+let g:buffergator_split_size=12
+let g:buffergator_autoupdate=1
+map <leader>b :BuffergatorToggle<cr>
 
 " --- gitgutter
 highlight clear SignColumn
