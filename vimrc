@@ -433,10 +433,13 @@ nnoremap <silent><F5> :NERDTreeMirrorToggle<CR>
 " --- Buffergator
 let g:buffergator_viewport_split_policy = "b"
 let g:buffergator_suppress_keymaps="1"
-let g:buffergator_autodismiss_on_select=0
+let g:buffergator_autodismiss_on_select=1
 let g:buffergator_split_size=12
 let g:buffergator_autoupdate=1
 map <leader>b :BuffergatorToggle<cr>
+
+" --- syntastic
+let g:syntastic_puppet_checkers=['puppetlint']
 
 " --- gitgutter
 highlight clear SignColumn
