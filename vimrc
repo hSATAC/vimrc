@@ -369,6 +369,9 @@ vnoremap <silent> <expr> p <sid>Repl()
 "endif
 "endif
 
+" --- vim-diff-enhanced
+autocmd VimEnter * CustomDiff histogram
+
 " --- supertab
 let g:SuperTabDefaultCompletionType = "context"
 "let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
