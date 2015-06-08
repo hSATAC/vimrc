@@ -6,8 +6,7 @@
 
 
 " For pathogen.vim: auto load all plugins in .vim/bundle
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+execute pathogen#infect()
 
 "---------------------------------------------------------------------------
 " ENCODING SETTINGS
@@ -370,7 +369,7 @@ vnoremap <silent> <expr> p <sid>Repl()
 "endif
 
 " --- vim-diff-enhanced
-autocmd VimEnter * CustomDiff histogram
+" autocmd VimEnter * CustomDiff histogram
 
 " --- supertab
 let g:SuperTabDefaultCompletionType = "context"
