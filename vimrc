@@ -566,3 +566,20 @@ endfunction
 " --- easymotion
 hi EasyMotionTarget ctermbg=none ctermfg=green
 hi EasyMotionShade  ctermbg=none ctermfg=blue
+
+" --- Startify
+let g:startify_change_to_vcs_root = 1
+let g:startify_custom_header = [
+\ '                                          _',
+\ '             |\___/|                      \\',
+\ '             )     (    |\_/|              ||',
+\ '            =\     /=   )a a `,_.-""""-.  //',
+\ '              )===(    =\Y_= /          \//',
+\ '             /     \     `"`\       /    /',
+\ '             |     |         |    \ |   /',
+\ '            /       \         \   /- \  \',
+\ '            \       /         || |  // /`',
+\ '     _/\_/\_/\_   _/_/\_/\_/\_((_|\((_//\_/\_/\_/\_',
+\ '',
+\ '',
+\ ]
