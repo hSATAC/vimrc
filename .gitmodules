@@ -164,3 +164,6 @@
 [submodule "bundle/vim-diff-enhanced"]
 	path = bundle/vim-diff-enhanced
 	url = https://github.com/chrisbra/vim-diff-enhanced.git
+[submodule "bundle/vim-go"]
+	path = bundle/vim-go
+	url = https://github.com/fatih/vim-go.git

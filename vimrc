@@ -442,9 +442,11 @@ map <leader>b :BuffergatorToggle<cr>
 
 " --- syntastic
 let g:syntastic_puppet_checkers=['puppetlint']
+let g:syntastic_shell = "/bin/bash"
 
 " --- gitgutter
 highlight clear SignColumn
+let g:gitgutter_enabled = 0
 
 " --- copy to osx clipboard
 map <F6> :w !pbcopy<CR><CR>
