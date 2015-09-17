@@ -448,7 +448,7 @@ let g:syntastic_shell = "/bin/bash"
 
 " --- gitgutter
 highlight clear SignColumn
-let g:gitgutter_enabled = 0
+let g:gitgutter_enabled = 1
 
 " --- copy to osx clipboard
 map <F6> :w !pbcopy<CR><CR>
