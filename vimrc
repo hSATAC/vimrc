@@ -31,6 +31,8 @@ set wak=no          " disable GUI alt menu
 set noswapfile
 set list listchars=tab:»·,trail:·
 
+set shell=/bin/bash
+
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
