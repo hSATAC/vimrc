@@ -140,7 +140,7 @@ autocmd BufNewFile,BufRead *.eyaml set filetype=yaml
 autocmd BufNewFile,BufRead *.cap set filetype=ruby
 
 " Go
-au FileType go au BufWritePre <buffer> Fmt
+au FileType go au BufWritePre <buffer> GoFmt
 "au FileType go
     "\ set ts=2 | " Set tabs to 2 spaces
     "\ set noexpandtab
