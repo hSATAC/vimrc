@@ -11,6 +11,11 @@
 let g:python_host_prog = '/usr/local/bin/python'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
+if has("nvim")
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  let base16colorspace=256
+endif
+
 execute pathogen#infect()
 
 "---------------------------------------------------------------------------
@@ -435,6 +440,7 @@ let g:tagbar_type_go = {
 
 " --- nerdtree
 let NERDTreeShowHidden=1
+let g:nerdtree_tabs_open_on_gui_startup=0
 nnoremap <silent><F5> :NERDTreeMirrorToggle<CR>
 
 " --- Buffergator
