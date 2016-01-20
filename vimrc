@@ -6,6 +6,11 @@
 
 
 " For pathogen.vim: auto load all plugins in .vim/bundle
+"
+
+let g:python_host_prog = '/usr/local/bin/python'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 execute pathogen#infect()
 
 "---------------------------------------------------------------------------
@@ -181,6 +186,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     " set leader to ,
     let mapleader=","
     let g:mapleader=","
+
 
     "replace the current word in all opened buffers
     "map <leader>r :call Replace()<CR>
@@ -373,10 +379,6 @@ vnoremap <silent> <expr> p <sid>Repl()
 
 " --- vim-diff-enhanced
 " autocmd VimEnter * CustomDiff histogram
-
-" --- supertab
-let g:SuperTabDefaultCompletionType = "context"
-"let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 " --- ctrlp
 map <leader>f :CtrlPMixed<CR>
