@@ -55,12 +55,12 @@ if has("gui_running")   " GUI color and font settings
     endif
     set t_Co=256          " 256 color mode
     set cursorline        " highlight current line
-    colors railscasts
+    colors hybrid
     set background=dark
 else
     " terminal color settings
-    colors wombat256
-    set background=light
+    colors gruvbox
+    set background=dark
 endif
 
 set clipboard=unnamed   " yank to the system register (*) by default
@@ -148,7 +148,8 @@ au FileType go au BufWritePre <buffer> GoFmt
     "\ set softtabstop=2
 
 "Restore cursor to file position in previous editing session
-set viminfo='10,\"100,:20,%,n~/.viminfo
+"set viminfo='10,\"100,:20,%,n~/.viminfo
+"set viminfo='10,\"100,:20,%,n~/.viminfo
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
     " Alias Q, W to q, w. ref: http://usevim.com/2013/05/01/not-an-editor-command/
