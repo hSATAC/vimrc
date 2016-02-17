@@ -150,7 +150,7 @@ autocmd BufNewFile,BufRead *.eyaml set filetype=yaml
 autocmd BufNewFile,BufRead *.cap set filetype=ruby
 
 " Go
-au FileType go au BufWritePre <buffer> GoFmt
+"au FileType go au BufWritePre <buffer> GoFmt
 "au FileType go
     "\ set ts=2 | " Set tabs to 2 spaces
     "\ set noexpandtab
@@ -596,3 +596,23 @@ let g:startify_custom_header = [
 \ '',
 \ '',
 \ ]
+
+" --- snippet
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+""" SuperTab like snippets behavior.
+imap <expr><TAB>
+ \ pumvisible() ? "\<C-n>" :
+ \ neosnippet#expandable_or_jumpable() ?
+ \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+""" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
