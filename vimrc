@@ -157,6 +157,9 @@ autocmd BufNewFile,BufRead *.cap set filetype=ruby
     "\ set shiftwidth=2
     "\ set softtabstop=2
 
+" Nginx
+au BufRead,BufNewFile */nginx/*.conf set ft=nginx
+
 "Restore cursor to file position in previous editing session
 "set viminfo='10,\"100,:20,%,n~/.viminfo
 "set viminfo='10,\"100,:20,%,n~/.viminfo

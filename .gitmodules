@@ -170,3 +170,6 @@
 [submodule "bundle/neosnippet-snippets"]
 	path = bundle/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
+[submodule "bundle/nginx-contrib-vim"]
+	path = bundle/nginx-contrib-vim
+	url = https://github.com/moskytw/nginx-contrib-vim
