@@ -173,3 +173,9 @@
 [submodule "bundle/nginx-contrib-vim"]
 	path = bundle/nginx-contrib-vim
 	url = https://github.com/moskytw/nginx-contrib-vim
+[submodule "bundle/vim-coloresque"]
+	path = bundle/vim-coloresque
+	url = https://github.com/gorodinskiy/vim-coloresque
+[submodule "bundle/vim-terraform"]
+	path = bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform.git
