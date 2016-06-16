@@ -580,8 +580,8 @@ function! AirlineThemePatch(palette)
 endfunction
 
 " --- easymotion
-hi EasyMotionTarget ctermbg=none ctermfg=green
-hi EasyMotionShade  ctermbg=none ctermfg=blue
+"hi EasyMotionTarget ctermbg=8 ctermfg=12
+"hi EasyMotionShade  ctermbg=none ctermfg=blue
 
 " --- Startify
 let g:startify_change_to_vcs_root = 1
