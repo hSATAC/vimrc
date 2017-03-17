@@ -1,1 +1,1 @@
-/Users/cat/.vimrc
+vimrc
