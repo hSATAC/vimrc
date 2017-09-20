@@ -287,7 +287,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
     "---------------------------------------------------------------------------
 
     " switch between file
-    nnoremap <leader><leader> <c-^>
+    nnoremap <leader>o <c-^>
 
     " ,g generates the header guard
     map <leader>g :call IncludeGuard()<CR>

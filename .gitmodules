@@ -179,3 +179,6 @@
 [submodule "bundle/vim-terraform"]
 	path = bundle/vim-terraform
 	url = https://github.com/hashivim/vim-terraform.git
+[submodule "bundle/alchmist.vim"]
+	path = bundle/alchmist.vim
+	url = https://github.com/slashmili/alchemist.vim
